@@ -1,4 +1,4 @@
-const React = require('react');
+const React = require("react");
 
 function Navbar({ user }) {
   return (
@@ -18,40 +18,48 @@ function Navbar({ user }) {
                 Магазин карт
               </a>
             </li>
-            { user
-
-              ? (
-                <>
-                  {' '}
-                  <li className="nav-item">
-                    <a className="nav-link" href="/magicard/authorization/logout">Выйти из учетной записи</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/magicard/basket">Корзина</a>
-                  </li>
-                  <li className="nav-item">
-                    <h2 className="name" style={{ color: '#DAA520' }}>{user}</h2>
-                    {/* позже написать {user.name} */}
-                  </li>
-
-                </>
-              )
-              : (
-                <>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/magicard/authorization/registration">
-                      <i className="bi bi-person-add" />
-                      Регистрация
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/magicard/authorization/login">
-                      <i className="bi bi-person-check-fill" />
-                      Войти в учетную запись
-                    </a>
-                  </li>
-                </>
-              )}
+            {user ? (
+              <>
+                {" "}
+                <li className="nav-item">
+                  <a className="nav-link" href="/magicard/authorization/logout">
+                    Выйти из учетной записи
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/magicard/basket">
+                    Корзина
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <h2 className="name" style={{ color: "#DAA520" }}>
+                    {user}
+                  </h2>
+                  {/* позже написать {user.name} */}
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <a
+                    className="nav-link"
+                    href="/magicard/authorization/registration"
+                  >
+                    <i className="bi bi-person-add" />
+                    Регистрация
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className="nav-link"
+                    href="/magicard/authorization/loginisation"
+                  >
+                    <i className="bi bi-person-check-fill" />
+                    Войти в учетную запись
+                  </a>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
