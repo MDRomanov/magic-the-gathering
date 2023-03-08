@@ -6,9 +6,6 @@ function Home({ title, user }) {
     <Layout title={title} user={user}>
       <div
         className="d-flex justify-content-center"
-        style={{
-          backgroundColor: '#d76920',
-        }}
       >
 
         <h1 className="title">
