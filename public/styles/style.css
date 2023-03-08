@@ -1,0 +1,8 @@
+
+h1 {
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    background: rgb(36,34,33);
+    background: linear-gradient(rgba(36,34,33,1) 0%, rgba(215,105,32,1) 45%, rgba(23,131,3,1) 100%);
+};
