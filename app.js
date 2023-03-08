@@ -5,7 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const renderComponents = require('./middleware/renderComponent');
-// const indexRouter = require('./routes/index.routes');
+const indexRouter = require('./routes/index.routes');
 const sessionConfig = require('./config/sessionConfig');
 // const { cookiesCleaner, getUser } = require('./middleware/auth');
 
@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(renderComponents);
 app.use(session(sessionConfig));
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use('/', indexRouter);
+app.use('/', indexRouter);
 app.use(morgan('dev'));
 
 app
