@@ -14,7 +14,7 @@ router
   .post(async (req, res) => {
     try {
       const { password, password2, name, email } = req.body;
-      console.log(email);
+
       if (password && password2 && name && email) {
         if (password === password2) {
           const emailUser = await User.findOne({ where: { email } });
