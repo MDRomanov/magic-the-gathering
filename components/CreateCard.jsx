@@ -1,11 +1,11 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function AddCard({ title, user }) {
+module.exports = function CreateCard({ title, user }) {
   return (
     <Layout title={title} user={user}>
       <div className="cardForm">
-        <form action="/new" method="POST" id="formAdd">
+        <form action="/create" method="PUT" id="CreateCard">
           <h2 className="form-title">Добавьте свою карточку</h2>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
@@ -48,7 +48,7 @@ module.exports = function AddCard({ title, user }) {
             />
           </div>
           <button type="submit" className="btn btn-primary">
-            Добавить карту
+            Изменить карту
           </button>
         </form>
       </div>
