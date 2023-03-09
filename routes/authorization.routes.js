@@ -13,6 +13,7 @@ router
   .post(async (req, res) => {
     try {
       const { password, password2, name, email } = req.body;
+      console.log(email.value);
       if (password && password2 && name && email) {
         if (password === password2) {
           const emailUser = await User.findOne({ where: { email } });
@@ -20,9 +21,9 @@ router
             const hash = await bcrypt.hash(password, 10);
             const newUser = await User.create({ name, email, password: hash });
             req.session.userId = newUser.id;
-            res.app.locals.userName = newUser.name;
+            res.app.locals.user = newUser.name;
             res.app.locals.userId = newUser.id;
-            res.json({ message: "ok" });
+            res.json({ message: "зарегистрировали" });
           } else {
             res.json({ message: "Такой email уже существует" });
           }
@@ -52,9 +53,9 @@ router
           const isSame = await bcrypt.compare(password, user.password);
           if (isSame) {
             req.session.userId = user.id;
-            res.app.locals.userName = user.name;
+            res.app.locals.user = user.name;
             res.app.locals.userId = user.id;
-            res.json({ message: "ok" });
+            res.json({ message: "Авторизировались" });
           } else {
             res.json({ message: "Неверный email" });
           }
