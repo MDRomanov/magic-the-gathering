@@ -21,62 +21,53 @@ function Registration({ title }) {
                       id="formReg"
                     >
                       <div className="form-outline mb-4">
-                        <label className="form-label" for="name">
+                        <label className="form-label" htmlFor="name">
                           Ваше имя
                         </label>
                         <input
                           type="text"
                           id="name"
-
-
                           className="form-control form-control-lg"
                           name="name"
                         />
-
                       </div>
 
                       <div className="form-outline mb-4">
-                        <label className="form-label" for="email">
+                        <label className="form-label" htmlFor="email">
                           Ваш Email
                         </label>
                         <input
                           type="email"
-
                           name="email"
                           id="email"
                           className="form-control form-control-lg"
                         />
-
                       </div>
 
                       <div className="form-outline mb-4">
-                        <label className="form-label" for="password">
+                        <label className="form-label" htmlFor="password">
                           Пароль
                         </label>
                         <input
                           name="password"
                           type="password"
                           id="password"
-
                           className="form-control form-control-lg"
                         />
-
                       </div>
 
                       <div className="form-outline mb-4">
-                        <label className="form-label" for="password2">
+                        <label className="form-label" htmlFor="password2">
                           Повторите ваш пароль
                         </label>
                         <input
                           name="password2"
                           type="password"
                           id="password2"
-
                           className="form-control form-control-lg"
                         />
-
                       </div>
-
+                      <p style={{ color: 'red' }} className="error" />
                       {/* <div className="d-flex justify-content-center"> */}
                       <button
                         type="submit"
