@@ -14,7 +14,8 @@ router
   .post(async (req, res) => {
     try {
       const { password, password2, name, email } = req.body;
-      console.log(email.value);
+      // console.log(email.value, '>>>>>>>>>');
+      // console.log(req.body);
       if (password && password2 && name && email) {
         if (password === password2) {
           const emailUser = await User.findOne({ where: { email } });
@@ -24,20 +25,20 @@ router
             req.session.userId = newUser.id;
             res.app.locals.user = newUser.name;
             res.app.locals.userId = newUser.id;
-
-            res.json({ message: "зарегистрировали" });
-
+            console.log(newUser.name);
+            res.status(200).json({ message: 'зарегистрировали' });
           } else {
-            res.json({ message: 'Такой email уже существует' });
+            res.status(403).json({ message: 'Такой email уже существует' });
           }
         } else {
-          res.json({ message: 'Ваши пароли не совпадают' });
+          res.status(403).json({ message: 'Ваши пароли не совпадают' });
         }
       } else {
-        res.json({ message: 'Заполните все поля' });
+        res.status(403).json({ message: 'Заполните все поля' });
       }
     } catch (error) {
-      res.json({ message: error.message });
+      console.log(error.message);
+      res.status(500).json({ message: error.message });
     }
   });
 
@@ -59,8 +60,8 @@ router
             res.app.locals.user = user.name;
             res.app.locals.userId = user.id;
 
-            res.json({ message: "Авторизировались" });
 
+            res.json({ message: 'Авторизировались' });
           } else {
             res.json({ message: 'Неверный email' });
           }
@@ -79,12 +80,12 @@ router
 
 // удаление сессии
 router.get('/logout', (req, res) => {
-  req.session.destroy((error) => {
+  req.session.destroy((error) => { // удаляем сессию 
     if (error) {
       return res.status(500).json({ message: 'Ошибка удаления сессии' });
     }
-    res.app.locals = {};
-    res.clearCookie('user_login');
+    res.app.locals = {}; // чистим все локальныее переменные
+    res.clearCookie('user_login'); // чистим все куки
     res.redirect('/magicard');
   });
 });

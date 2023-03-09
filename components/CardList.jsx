@@ -3,9 +3,9 @@ const React = require('react');
 const CardInfo = require('./CardInfo');
 const Layout = require('./Layout');
 
-module.exports = function CardList({ cards, user }) {
+module.exports = function CardList({title, cards, user }) {
   return (
-    <Layout user={user}>
+    <Layout title={title} user={user}>
       <div className="div-header">
         <h1 className="card-list">Доступные карты</h1>
       </div>

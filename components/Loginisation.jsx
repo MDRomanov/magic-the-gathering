@@ -21,31 +21,27 @@ function Loginisation({ title }) {
                       id="formLog"
                     >
                       <div className="form-outline mb-4">
-                        <label className="form-label" for="email">
+                        <label className="form-label" htmlFor="email">
                           Ваш Email
                         </label>
                         <input
                           name="email"
                           type="email"
-
                           id="email"
                           className="form-control form-control-lg"
                         />
-                        
                       </div>
 
                       <div className="form-outline mb-4">
-                        <label className="form-label" for="password">
+                        <label className="form-label" htmlFor="password">
                           Пароль
                         </label>
                         <input
                           name="password"
                           type="password"
-
                           id="password"
                           className="form-control form-control-lg"
                         />
-
                       </div>
 
                       <div className="d-flex justify-content-center">
