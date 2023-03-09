@@ -22,6 +22,11 @@ function Navbar({ user }) {
               <>
                 {" "}
                 <li className="nav-item">
+                  <a className="nav-link text-warning" href="/magicard">
+                    Добавить свою карточку
+                  </a>
+                </li>
+                <li className="nav-item">
                   <a className="nav-link" href="/magicard/authorization/logout">
                     Выйти из учетной записи
                   </a>
