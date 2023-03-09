@@ -15,11 +15,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// router.get('/', (req,res) => {
-//     const {name, img, price} = req.body;
-//     try {
-//         res.renderComponent(AddCard, {title, currentUser})
-//     }
-// })
+
 
 module.exports = router;

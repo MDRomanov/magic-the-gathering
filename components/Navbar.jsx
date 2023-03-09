@@ -22,7 +22,7 @@ function Navbar({ user }) {
               <>
                 {" "}
                 <li className="nav-item">
-                  <a className="nav-link text-warning" href="/magicard">
+                  <a className="nav-link text-warning" href="/new">
                     Добавить свою карточку
                   </a>
                 </li>
@@ -32,7 +32,7 @@ function Navbar({ user }) {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/magicard/basket">
+                  <a className="nav-link" href="/basket">
                     Корзина
                   </a>
                 </li>

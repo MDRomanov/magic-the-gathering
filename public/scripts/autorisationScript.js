@@ -1,11 +1,12 @@
-const formReg = document.querySelector('#formReg');
-const formLog = document.querySelector('#formLog');
-console.log(formReg);
+const formReg = document.querySelector("#formReg");
+const formLog = document.querySelector("#formLog");
+
+
 if (formReg) {
   formReg.addEventListener('submit', async (e) => {
     e.preventDefault();
     const { name, email, password, password2, action, method } = e.target;
-    console.log(name.value);
+
     const res = await fetch(action, {
       method,
       headers: {
@@ -19,9 +20,10 @@ if (formReg) {
       }),
     });
     const data = await res.json();
-    console.log(data);
-    if (data.message === 'зарегистрировали') {
-      window.location.assign('/magicard');
+
+    if (data.message === "зарегистрировали") {
+      window.location.assign("/magicard");
+
     } else {
       document.querySelector('.error').innerHTML = data.message;
     }

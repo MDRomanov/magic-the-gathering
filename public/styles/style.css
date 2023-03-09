@@ -39,3 +39,12 @@ body {
     background-image: url('https://wallpaperaccess.com/full/6079733.png');
     background-repeat: no-repeat;
 }
+
+.mb-3, .form-title {
+    color: white;
+}
+
+.cardForm {
+    display: flex;
+    justify-content: center;
+}
