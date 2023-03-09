@@ -1,11 +1,11 @@
 const formReg = document.querySelector("#formReg");
 const formLog = document.querySelector("#formLog");
-console.log(formReg);
+console.log(formReg + 'formreg');
 if (formReg) {
   formReg.addEventListener("submit", async (e) => {
     e.preventDefault();
     const { name, email, password, password2, action, method } = e.target;
-    console.log(name.value);
+    console.log(name.value + 'namevalue');
     const res = await fetch(action, {
       method,
       headers: {
