@@ -1,5 +1,5 @@
-const React = require("react");
-const Layout = require("./Layout");
+const React = require('react');
+const Layout = require('./Layout');
 
 function Registration({ title }) {
   return (
@@ -23,10 +23,11 @@ function Registration({ title }) {
                       <div className="form-outline mb-4">
                         <input
                           type="text"
-                          id="form3Example1cg"
+                          id="name"
+                          name="name"
                           className="form-control form-control-lg"
                         />
-                        <label className="form-label" for="form3Example1cg">
+                        <label className="form-label" htmlFor="form3Example1cg">
                           Ваше имя
                         </label>
                       </div>
@@ -34,10 +35,11 @@ function Registration({ title }) {
                       <div className="form-outline mb-4">
                         <input
                           type="email"
-                          id="form3Example3cg"
+                          id="email"
+                          name="email"
                           className="form-control form-control-lg"
                         />
-                        <label className="form-label" for="form3Example3cg">
+                        <label className="form-label" htmlFor="form3Example3cg">
                           Ваш Email
                         </label>
                       </div>
@@ -45,10 +47,11 @@ function Registration({ title }) {
                       <div className="form-outline mb-4">
                         <input
                           type="password"
-                          id="form3Example4cg"
+                          id="password"
+                          name="password"
                           className="form-control form-control-lg"
                         />
-                        <label className="form-label" for="form3Example4cg">
+                        <label className="form-label" htmlFor="form3Example4cg">
                           Пароль
                         </label>
                       </div>
@@ -56,10 +59,14 @@ function Registration({ title }) {
                       <div className="form-outline mb-4">
                         <input
                           type="password"
-                          id="form3Example4cdg"
+                          id="password2"
+                          name="password2"
                           className="form-control form-control-lg"
                         />
-                        <label className="form-label" for="form3Example4cdg">
+                        <label
+                          className="form-label"
+                          htmlFor="form3Example4cdg"
+                        >
                           Повторите ваш пароль
                         </label>
                       </div>
@@ -74,7 +81,7 @@ function Registration({ title }) {
                       </div>
 
                       <p className="text-center text-muted mt-5 mb-0">
-                        Если есть созданный аккаунт?{" "}
+                        Если есть созданный аккаунт?{' '}
                         <a
                           href="/magicard/authorization/loginisation"
                           className="fw-bold text-body"

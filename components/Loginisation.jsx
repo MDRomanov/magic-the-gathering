@@ -1,5 +1,5 @@
-const React = require("react");
-const Layout = require("./Layout");
+const React = require('react');
+const Layout = require('./Layout');
 
 function Loginisation({ title }) {
   return (
@@ -24,22 +24,24 @@ function Loginisation({ title }) {
                         <input
                           type="email"
                           id="form3Example3cg"
+                          name="email"
                           className="form-control form-control-lg"
                         />
-                        <label className="form-label" for="form3Example3cg">
-                          Ваш Email
-                        </label>
+                        {/* <label className="form-label" htmlFor="form3Example3cg"> */}
+                        Ваш Email
+                        {/* </label> */}
                       </div>
 
                       <div className="form-outline mb-4">
                         <input
                           type="password"
                           id="form3Example4cg"
+                          name="password"
                           className="form-control form-control-lg"
                         />
-                        <label className="form-label" for="form3Example4cg">
-                          Пароль
-                        </label>
+                        {/* <label className="form-label" htmlFor="form3Example4cg"> */}
+                        Пароль
+                        {/* </label> */}
                       </div>
 
                       <div className="d-flex justify-content-center">
