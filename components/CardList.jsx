@@ -5,7 +5,7 @@ const Layout = require('./Layout');
 
 module.exports = function CardList({ cards, user }) {
   return (
-    <Layout>
+    <Layout user={user}>
       <div className="div-header">
         <h1 className="card-list">Доступные карты</h1>
       </div>
