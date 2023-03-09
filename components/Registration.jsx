@@ -1,5 +1,5 @@
-const React = require("react");
-const Layout = require("./Layout");
+const React = require('react');
+const Layout = require('./Layout');
 
 function Registration({ title }) {
   return (
@@ -27,9 +27,12 @@ function Registration({ title }) {
                         <input
                           type="text"
                           id="name"
+
+
                           className="form-control form-control-lg"
                           name="name"
                         />
+
                       </div>
 
                       <div className="form-outline mb-4">
@@ -38,10 +41,12 @@ function Registration({ title }) {
                         </label>
                         <input
                           type="email"
+
                           name="email"
                           id="email"
                           className="form-control form-control-lg"
                         />
+
                       </div>
 
                       <div className="form-outline mb-4">
@@ -52,8 +57,10 @@ function Registration({ title }) {
                           name="password"
                           type="password"
                           id="password"
+
                           className="form-control form-control-lg"
                         />
+
                       </div>
 
                       <div className="form-outline mb-4">
@@ -64,8 +71,10 @@ function Registration({ title }) {
                           name="password2"
                           type="password"
                           id="password2"
+
                           className="form-control form-control-lg"
                         />
+
                       </div>
 
                       {/* <div className="d-flex justify-content-center"> */}
@@ -78,7 +87,7 @@ function Registration({ title }) {
                       {/* </div> */}
 
                       <p className="text-center text-muted mt-5 mb-0">
-                        Если есть созданный аккаунт?{" "}
+                        Если есть созданный аккаунт?{' '}
                         <a
                           href="/magicard/authorization/loginisation"
                           className="fw-bold text-body"

@@ -1,5 +1,5 @@
-const React = require("react");
-const Layout = require("./Layout");
+const React = require('react');
+const Layout = require('./Layout');
 
 function Loginisation({ title }) {
   return (
@@ -27,9 +27,11 @@ function Loginisation({ title }) {
                         <input
                           name="email"
                           type="email"
+
                           id="email"
                           className="form-control form-control-lg"
                         />
+                        
                       </div>
 
                       <div className="form-outline mb-4">
@@ -39,9 +41,11 @@ function Loginisation({ title }) {
                         <input
                           name="password"
                           type="password"
+
                           id="password"
                           className="form-control form-control-lg"
                         />
+
                       </div>
 
                       <div className="d-flex justify-content-center">
