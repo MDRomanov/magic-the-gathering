@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Basketlists', {
+    await queryInterface.createTable("Basketlists", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -13,8 +13,8 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model: 'Cards',
-          key: 'id',
+          model: "Cards",
+          key: "id",
         },
       },
       count: {
@@ -23,6 +23,10 @@ module.exports = {
       basketId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: {
+          model: "Baskets",
+          key: "id",
+        },
       },
       createdAt: {
         allowNull: false,
@@ -35,6 +39,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Basketlists');
+    await queryInterface.dropTable("Basketlists");
   },
 };
