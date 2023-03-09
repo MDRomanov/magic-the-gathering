@@ -21,64 +21,70 @@ function Registration({ title }) {
                       id="formReg"
                     >
                       <div className="form-outline mb-4">
+                        <label className="form-label" for="name">
+                          Ваше имя
+                        </label>
                         <input
                           type="text"
                           id="name"
-                          name="name"
+
+
                           className="form-control form-control-lg"
+                          name="name"
                         />
-                        <label className="form-label" htmlFor="form3Example1cg">
-                          Ваше имя
-                        </label>
+
                       </div>
 
                       <div className="form-outline mb-4">
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          className="form-control form-control-lg"
-                        />
-                        <label className="form-label" htmlFor="form3Example3cg">
+                        <label className="form-label" for="email">
                           Ваш Email
                         </label>
+                        <input
+                          type="email"
+
+                          name="email"
+                          id="email"
+                          className="form-control form-control-lg"
+                        />
+
                       </div>
 
                       <div className="form-outline mb-4">
-                        <input
-                          type="password"
-                          id="password"
-                          name="password"
-                          className="form-control form-control-lg"
-                        />
-                        <label className="form-label" htmlFor="form3Example4cg">
+                        <label className="form-label" for="password">
                           Пароль
                         </label>
+                        <input
+                          name="password"
+                          type="password"
+                          id="password"
+
+                          className="form-control form-control-lg"
+                        />
+
                       </div>
 
                       <div className="form-outline mb-4">
-                        <input
-                          type="password"
-                          id="password2"
-                          name="password2"
-                          className="form-control form-control-lg"
-                        />
-                        <label
-                          className="form-label"
-                          htmlFor="form3Example4cdg"
-                        >
+                        <label className="form-label" for="password2">
                           Повторите ваш пароль
                         </label>
+                        <input
+                          name="password2"
+                          type="password"
+                          id="password2"
+
+                          className="form-control form-control-lg"
+                        />
+
                       </div>
 
-                      <div className="d-flex justify-content-center">
-                        <button
-                          type="submit"
-                          className="btn btn-secondary btn-block btn-lg gradient-custom-2 text-body"
-                        >
-                          Зарегистрироваться
-                        </button>
-                      </div>
+                      {/* <div className="d-flex justify-content-center"> */}
+                      <button
+                        type="submit"
+                        className="btn btn-secondary btn-block btn-lg gradient-custom-2 text-body"
+                      >
+                        Зарегистрироваться
+                      </button>
+                      {/* </div> */}
 
                       <p className="text-center text-muted mt-5 mb-0">
                         Если есть созданный аккаунт?{' '}

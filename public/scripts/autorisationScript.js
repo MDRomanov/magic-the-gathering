@@ -5,7 +5,7 @@ if (formReg) {
   formReg.addEventListener("submit", async (e) => {
     e.preventDefault();
     const { name, email, password, password2, action, method } = e.target;
-    console.log(name);
+    console.log(name.value);
     const res = await fetch(action, {
       method,
       headers: {
@@ -19,7 +19,7 @@ if (formReg) {
       }),
     });
     const data = await res.json();
-    if (data.message === "ok") {
+    if (data.message === "зарегистрировали") {
       window.location.assign("/magicard");
     } else {
       document.querySelector(".error").innerHTML = data.message;
@@ -42,7 +42,7 @@ if (formLog) {
       }),
     });
     const data = await res.json();
-    if (data.message === "ok") {
+    if (data.message === "Авторизировались") {
       window.location.assign("/magicard");
     } else {
       document.querySelector(".error").innerHTML = data.message;
