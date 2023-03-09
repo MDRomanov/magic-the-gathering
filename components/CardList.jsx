@@ -1,6 +1,6 @@
 const React = require("react");
 
-const CardInfo = require("./BasketCard");
+const CardInfo = require("./CardInfo");
 const Layout = require("./Layout");
 
 module.exports = function CardList({ cards, user, userId }) {
