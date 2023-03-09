@@ -1,20 +1,20 @@
-const express = require('express');
-const bcrypt = require('bcrypt');
-const Registration = require('../components/Registration.jsx');
-const Loginisation = require('../components/Loginisation.jsx');
-const { User } = require('../db/models');
+const express = require("express");
+const bcrypt = require("bcrypt");
+const Registration = require("../components/Registration.jsx");
+const Loginisation = require("../components/Loginisation.jsx");
+const { User } = require("../db/models");
 
 const router = express.Router();
 
 router
-  .route('/registration')
+  .route("/registration")
   .get((req, res) => {
-    res.renderComponent(Registration, { title: 'Registration' });
+    res.renderComponent(Registration, { title: "Registration" });
   })
   .post(async (req, res) => {
     try {
       const { password, password2, name, email } = req.body;
-      console.log(email.value + 'auth');
+
       if (password && password2 && name && email) {
         if (password === password2) {
           const emailUser = await User.findOne({ where: { email } });
@@ -26,15 +26,14 @@ router
             res.app.locals.userId = newUser.id;
 
             res.json({ message: "зарегистрировали" });
-
           } else {
-            res.json({ message: 'Такой email уже существует' });
+            res.json({ message: "Такой email уже существует" });
           }
         } else {
-          res.json({ message: 'Ваши пароли не совпадают' });
+          res.json({ message: "Ваши пароли не совпадают" });
         }
       } else {
-        res.json({ message: 'Заполните все поля' });
+        res.json({ message: "Заполните все поля" });
       }
     } catch (error) {
       res.json({ message: error.message });
@@ -42,9 +41,9 @@ router
   });
 
 router
-  .route('/loginisation')
+  .route("/loginisation")
   .get((req, res) => {
-    res.renderComponent(Loginisation, { title: 'Loginisation' });
+    res.renderComponent(Loginisation, { title: "Loginisation" });
   })
   .post(async (req, res) => {
     try {
@@ -60,17 +59,16 @@ router
             res.app.locals.userId = user.id;
 
             res.json({ message: "Авторизировались" });
-
           } else {
-            res.json({ message: 'Неверный email' });
+            res.json({ message: "Неверный email" });
           }
         } else {
           res.json({
-            message: 'Мы не нашли вас среди зарегистрированных пользователей',
+            message: "Мы не нашли вас среди зарегистрированных пользователей",
           });
         }
       } else {
-        res.json({ message: 'Заполните все поля' });
+        res.json({ message: "Заполните все поля" });
       }
     } catch (error) {
       res.json({ message: error.message });
@@ -78,14 +76,14 @@ router
   });
 
 // удаление сессии
-router.get('/logout', (req, res) => {
+router.get("/logout", (req, res) => {
   req.session.destroy((error) => {
     if (error) {
-      return res.status(500).json({ message: 'Ошибка удаления сессии' });
+      return res.status(500).json({ message: "Ошибка удаления сессии" });
     }
     res.app.locals = {};
-    res.clearCookie('user_login');
-    res.redirect('/magicard');
+    res.clearCookie("user_login");
+    res.redirect("/magicard");
   });
 });
 module.exports = router;

@@ -32,7 +32,7 @@ function Navbar({ user }) {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/magicard/basket">
+                  <a className="nav-link" href="/basket">
                     Корзина
                   </a>
                 </li>
