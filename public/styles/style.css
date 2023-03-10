@@ -32,10 +32,12 @@ h1.title {
   margin-bottom: 5%;
   margin-top: 5%;
   color: white;
+
 }
 
 body {
   background-image: url('https://wallpaperaccess.com/full/6079733.png');
+
 }
 
 .mb-3,
@@ -50,9 +52,35 @@ body {
 
 .all {
   margin-bottom: 5%;
+
 }
 
+.btn-detail {
+  background-color: black;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 19px;
+  border-radius: 10px;
+}
+.btn-detail:hover {
+  text-decoration: none;
+}
+.btn-detail:active {
+  color: rgb(241, 245, 245);
+  text-decoration: none;
+}
+.btn-detail:visited {
+  color: rgb(241, 205, 205);
+}
+.card-title-img-detail {
+  width: 550px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
 .div-header {
+
   margin-bottom: 5%;
 }
 
@@ -60,3 +88,4 @@ body {
   color: azure;
   padding: 0 60px 0 20px;
 }
+
