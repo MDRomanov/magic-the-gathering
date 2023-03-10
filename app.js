@@ -8,7 +8,7 @@ const session = require('express-session');
 const renderComponents = require('./middleware/renderComponent');
 const indexRouter = require('./routes/index.routes');
 const sessionConfig = require('./config/sessionConfig');
-// const { cookiesCleaner, getUser } = require('./middleware/auth');
+const { getUser } = require('./middleware/auth');
 
 const app = express();
 
@@ -20,8 +20,7 @@ const port = process.env.PORT || 3000;
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(cookiesCleaner);
-// app.use(getUser);
+app.use(getUser);
 app.use(renderComponents);
 app.use(session(sessionConfig));
 app.use(express.static(path.join(__dirname, 'public')));

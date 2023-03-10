@@ -1,58 +1,108 @@
-
-h1.title{
+h1.title {
     display: flex;
     align-items: center;
     z-index: 5;
-    background: rgb(36,34,33);
-    background: linear-gradient(rgba(36,34,33,1) 0%, rgba(215,105,32,1) 45%, rgba(23,131,3,1) 100%);
-};
-
-.card-title-img {
+    background: rgb(36, 34, 33);
+    background: linear-gradient(
+      rgba(36, 34, 33, 1) 0%,
+      rgba(215, 105, 32, 1) 45%,
+      rgba(23, 131, 3, 1) 100%
+    );
+  }
+  
+  .card-title-img {
     width: 350px;
-}
-
-.card-div {
+  }
+  
+  .card-div {
     max-width: 350px;
-};
-
-.card-list h1 {
-display: flex;
-justify-content: center;
-margin-bottom: 5%;
-margin-top: 5%;
-color: white;
-}
-
-.div-header {
+  }
+  
+  .card-list h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 5%;
     margin-top: 5%;
     color: white;
-    }
-
-i {
-    margin: 25px;
-}
-
-body {
-    background-image: url('https://wallpaperaccess.com/full/6079733.png');
-    background-repeat: no-repeat;
-}
-
-.mb-3, .form-title {
-    color: white;
-}
-
-.cardForm {
+  }
+  
+  .div-header {
     display: flex;
     justify-content: center;
-}
-
-.all {
     margin-bottom: 5%;
-}
-
-.div-header {
+    margin-top: 5%;
+    color: white;
+  }
+  
+  i {
+    margin: 25px;
+  }
+  
+  body {
+    background-image: url("https://wallpaperaccess.com/full/6079733.png");
+    background-repeat: no-repeat;
+  }
+  
+  .mb-3,
+  .form-title {
+    color: white;
+  }
+  
+  .cardForm {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .all {
     margin-bottom: 5%;
-}
+  }
+  .detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  .card-detail {
+    width: 550px;
+    align-items: center;
+  }
+  .card-body-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    width: 550px;
+    background-color: rgb(140, 117, 90);
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  
+  .btn-detail {
+    background-color: black;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    border-radius: 10px;
+  }
+  .btn-detail:hover {
+    text-decoration: none;
+  }
+  .btn-detail:active {
+    color: rgb(241, 245, 245);
+    text-decoration: none;
+  }
+  .btn-detail:visited {
+    color: rgb(241, 205, 205);
+  }
+  .card-title-img-detail {
+    width: 550px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+  }
+  .div-header {
+    margin: 30%;
+    margin-bottom: 5%;
+  }

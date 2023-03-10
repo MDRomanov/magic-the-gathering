@@ -1,4 +1,4 @@
-const React = require("react");
+const React = require('react');
 
 module.exports = function CardInfo({ card, user, userId }) {
   return (
@@ -34,8 +34,9 @@ module.exports = function CardInfo({ card, user, userId }) {
               Полная информация
             </a>
             <i className="bi bi-trash3-fill icon" data-id={card.id} />
-            <i className="bi bi-tools" data-id={card.id} />
-
+            <a href={`/magicard/edit/${card.id}`}>
+              <i className="bi bi-tools editIcon" data-id={card.id} />
+            </a>
           </>
           )}
         </div>

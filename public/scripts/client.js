@@ -1,11 +1,14 @@
 const form = document.getElementById('formAdd');
-const CreateCard = document.getElementById('CreateCard');
+// const CreateCard = document.getElementById('CreateCard');
 const divCards = document.getElementById('divCards');
+const updateCard = document.querySelector('#updateCard');
 
 if (form) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const { name, img, price, quality, action, method } = event.target;
+    const {
+      name, img, price, quality, action, method,
+    } = event.target;
 
     const res = await fetch(action, {
       method,
@@ -40,6 +43,33 @@ if (divCards) {
       if (data.cardNum) {
         event.target.closest('.all').remove();
       }
+    }
+  });
+}
+
+if (updateCard) {
+  updateCard.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const {
+      name, img, price, quality,
+    } = e.target;
+    const result = await fetch(`/magicard/edit/${e.target.dataset.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: name.value,
+        img: img.value,
+        price: price.value,
+        quality: quality.value,
+      }),
+    });
+    const data = await result.json();
+    if (!data) {
+      updateCard.insertAdjacentHTML('beforeend', data.message);
+    } else {
+      window.location.assign('/magicard');
     }
   });
 }

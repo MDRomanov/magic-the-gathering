@@ -10,11 +10,6 @@ const authorizationRouter = require('./authorization.routes');
 const cardRouter = require('./card.routes');
 const basketRouter = require('./basket.routes');
 
-// router.get('/', (req, res) => {
-//   res.renderComponent(Layout, { user: 'Max' });
-// });
-// промежуточная функция, проверить работоспособность сервера
-
 router.use('/', mainRouter);
 router.use('/magicard', cardRouter);
 router.use('/magicard/authorization', authorizationRouter);
