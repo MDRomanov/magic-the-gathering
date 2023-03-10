@@ -1,5 +1,5 @@
-const React = require("react");
-const Navbar = require("./Navbar");
+const React = require('react');
+const Navbar = require('./Navbar');
 
 module.exports = function Layout({ title, children, user }) {
   return (
@@ -8,7 +8,8 @@ module.exports = function Layout({ title, children, user }) {
         <title>{title}</title>
 
         <link rel="stylesheet" href="/styles/style.css" />
-        <link
+        <link rel="stylesheet" href="/styles/bootstrap.min.css" />
+        {/* <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
         />
@@ -17,7 +18,7 @@ module.exports = function Layout({ title, children, user }) {
           rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossOrigin="anonymous"
-        />
+        /> */}
         <script defer src="/scripts/autorisationScript.js" />
         <script defer src="/scripts/client.js" />
         {/* place for scripts from public/scripts */}
