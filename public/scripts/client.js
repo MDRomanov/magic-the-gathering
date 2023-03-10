@@ -21,8 +21,7 @@ if (form) {
     });
     const data = await res.json();
     if (data.message !== 'Ваша карточка добавлена') {
-      console.log(data.message);
-      form.insertAdjacentHTML('beforeend', data.message);
+      document.querySelector('.error').innerHTML = data.message;
     } else {
       window.location.assign('/magicard');
     }

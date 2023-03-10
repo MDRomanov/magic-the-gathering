@@ -8,7 +8,7 @@ module.exports = function AddCard({ title, user }) {
         <form action="/new" method="POST" id="formAdd">
           <h2 className="form-title">Добавьте свою карточку</h2>
           <div className="mb-3">
-            <label for="name" className="form-label">
+            <label htmlFor="name" className="form-label">
               Название
             </label>
             <input
@@ -20,24 +20,24 @@ module.exports = function AddCard({ title, user }) {
             />
           </div>
           <div className="mb-3">
-            <label for="img" className="form-label">
+            <label htmlFor="img" className="form-label">
               Изображение
             </label>
             <input type="text" className="form-control" id="img" name="img" />
           </div>
           <div className="mb-3">
-            <label for="price" className="form-label">
-              Цена
+            <label htmlFor="price" className="form-label">
+              Цена(number)
             </label>
             <input
-              type="text"
+              type="number"
               className="form-control"
               id="price"
               name="price"
             />
           </div>
           <div className="mb-3">
-            <label for="quality" className="form-label">
+            <label htmlFor="quality" className="form-label">
               Состояние
             </label>
             <input
@@ -47,11 +47,11 @@ module.exports = function AddCard({ title, user }) {
               name="quality"
             />
           </div>
+          <p style={{ color: 'red' }} className="error" />
           <button type="submit" className="btn btn-primary">
             Добавить карту
           </button>
         </form>
-        <p style={{ color: 'red' }} className="error" />
       </div>
     </Layout>
   );
