@@ -1,6 +1,5 @@
-const formReg = document.querySelector("#formReg");
-const formLog = document.querySelector("#formLog");
-
+const formReg = document.querySelector('#formReg');
+const formLog = document.querySelector('#formLog');
 
 if (formReg) {
   formReg.addEventListener('submit', async (e) => {
@@ -21,9 +20,8 @@ if (formReg) {
     });
     const data = await res.json();
 
-    if (data.message === "зарегистрировали") {
-      window.location.assign("/magicard");
-
+    if (data.message === 'зарегистрировали') {
+      window.location.assign('/magicard');
     } else {
       document.querySelector('.error').innerHTML = data.message;
     }
