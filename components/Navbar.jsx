@@ -1,4 +1,4 @@
-const React = require("react");
+const React = require('react');
 
 function Navbar({ user }) {
   return (
@@ -20,7 +20,7 @@ function Navbar({ user }) {
             </li>
             {user ? (
               <>
-                {" "}
+                {' '}
                 <li className="nav-item">
                   <a className="nav-link text-warning" href="/new">
                     Добавить свою карточку
@@ -37,9 +37,7 @@ function Navbar({ user }) {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <h2 className="name" style={{ color: "#DAA520" }}>
-                    Приветствуем, {user}!
-                  </h2>
+                  <h2 className="name">Приветствуем, {user}!</h2>
                   {/* позже написать {user.name} */}
                 </li>
               </>

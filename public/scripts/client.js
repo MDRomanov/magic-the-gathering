@@ -37,14 +37,11 @@ if (form) {
       }),
     });
     const data = await res.json();
-    // if (data.message === 'Ваша карточка добавлена') {
-    divCards.insertAdjacentHTML("beforeend", data.html);
-
-    // window.location.assign('/magicard');
-
-    // } else {
-    //   document.querySelector('.error').innerHTML = data.message;
-    // }
+    if (data.message !== 'Ваша карточка добавлена') {
+      document.querySelector('.error').innerHTML = data.message;
+    } else {
+      window.location.assign('/magicard');
+    }
   });
 }
 
@@ -62,6 +59,7 @@ if (divCards) {
     }
   });
 }
+
 
 if (CreateCard) {
   form.addEventListener("submit", async (event) => {
@@ -84,3 +82,4 @@ if (CreateCard) {
     window.location.assign("/magicard");
   });
 }
+

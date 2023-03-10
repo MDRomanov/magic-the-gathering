@@ -27,10 +27,10 @@ module.exports = function AddCard({ title, user }) {
           </div>
           <div className="mb-3">
             <label htmlFor="price" className="form-label">
-              Цена
+              Цена(number)
             </label>
             <input
-              type="text"
+              type="number"
               className="form-control"
               id="price"
               name="price"
@@ -47,6 +47,7 @@ module.exports = function AddCard({ title, user }) {
               name="quality"
             />
           </div>
+          <p style={{ color: 'red' }} className="error" />
           <button type="submit" className="btn btn-primary">
             Добавить карту
           </button>

@@ -1,11 +1,12 @@
 const formReg = document.querySelector('#formReg');
-const formLog = document.querySelector('#formLog');
-
+const formLogin = document.querySelector('#formLogin');
+console.log(formLogin);
 if (formReg) {
   formReg.addEventListener('submit', async (e) => {
+    console.log(e.target);
     e.preventDefault();
     const { name, email, password, password2, action, method } = e.target;
-
+    console.log(name.value);
     const res = await fetch(action, {
       method,
       headers: {
@@ -19,18 +20,20 @@ if (formReg) {
       }),
     });
     const data = await res.json();
-
-    if (data.message === 'зарегистрировали') {
+    if (data.message === 'ok') {
       window.location.assign('/magicard');
     } else {
+      console.log(data);
       document.querySelector('.error').innerHTML = data.message;
     }
   });
 }
-if (formLog) {
-  formLog.addEventListener('submit', async (e) => {
+if (formLogin) {
+  formLogin.addEventListener('submit', async (e) => {
+    console.log(e.target);
     e.preventDefault();
     const { email, password, action, method } = e.target;
+
     const res = await fetch(action, {
       method,
       headers: {
@@ -42,9 +45,10 @@ if (formLog) {
       }),
     });
     const data = await res.json();
-    if (data.message === 'Авторизировались') {
+    if (data.message === 'ok') {
       window.location.assign('/magicard');
     } else {
+      console.log(data);
       document.querySelector('.error').innerHTML = data.message;
     }
   });
