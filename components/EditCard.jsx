@@ -1,10 +1,12 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function EditCard({ card }) {
+module.exports = function EditCard({ card, user }) {
   return (
-    <Layout>
-      <h1>Изменить карточку</h1>
+    <Layout user={user}>
+      <div className="div-header">
+      <h1 className="card-list">Изменить карточку</h1>
+      </div>
 
       <main className="cardForm" role="main">
         <form method="PUT" action={`/magicard/edit/${card.id}`} id="updateCard">

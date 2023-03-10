@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
+
     const { name, img, price, quality } = req.body;
     if (name && img && price && quality) {
       const newCard = await Card.create({
@@ -30,7 +31,7 @@ router.post('/', async (req, res) => {
         });
       }
     } else {
-      res.json({ message: 'Батишка, заполни все поля пжл' });
+      res.json({ message: 'Братишка, заполни все поля пжл' });
     }
     // if (!newCard) {
     //   res.json({ message: 'ваша ккарточка не добавлена ' });

@@ -3,7 +3,7 @@ const FileStore = require('session-file-store')(session);
 
 const sessionConfig = {
   store: new FileStore(),
-  name: 'user_login',
+  name: 'user_sid',
   secret: 'test',
   resave: false,
   saveUninitialized: false,

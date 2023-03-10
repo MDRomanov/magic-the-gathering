@@ -1,4 +1,4 @@
-const React = require("react");
+const React = require('react');
 
 module.exports = function CardInfo({ card, user, userId }) {
   return (
@@ -14,14 +14,17 @@ module.exports = function CardInfo({ card, user, userId }) {
           {/* <p className="card-text">
             Город продавца: {user.city}
           </p> */}
-          {/* проверка для логинизации */}
+       
+
           <a href={`/magicard/${card.id}`} className="btn btn-primary">
             Полная информация
           </a>
           {userId === card.userId && (
             <>
               <i className="bi bi-trash3-fill icon" data-id={card.id} />
+              <a href={`/magicard/edit/${card.id}`}>
               <i className="bi bi-tools" data-id={card.id} />
+               </a>
             </>
           )}
         </div>
