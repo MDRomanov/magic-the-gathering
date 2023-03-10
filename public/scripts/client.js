@@ -1,16 +1,33 @@
-const form = document.getElementById('formAdd');
-const CreateCard = document.getElementById('CreateCard');
-const divCards = document.getElementById('divCards');
+const form = document.getElementById("formAdd");
+const CreateCard = document.getElementById("CreateCard");
+const divCards = document.getElementById("divCards");
+const detail = document.querySelector("#detailCard");
+// console.log(detail);
+if (detail) {
+  detail.addEventListener("click", async (event) => {
+    // console.log(event.target.classList.contains("add"));
+    if (event.target.classList.contains("add")) {
+      event.preventDefault();
+      const res = await fetch(`/magicard/${event.target.dataset.id}`, {
+        method: "POST",
+      });
+      // const data = await res.json();
+      // if (data.cardNum) {
+      //   event.target.closest(".all").remove();
+      // }
+    }
+  });
+}
 
 if (form) {
-  form.addEventListener('submit', async (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const { name, img, price, quality, action, method } = event.target;
 
     const res = await fetch(action, {
       method,
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name: name.value,
@@ -21,7 +38,7 @@ if (form) {
     });
     const data = await res.json();
     // if (data.message === 'Ваша карточка добавлена') {
-    divCards.insertAdjacentHTML('beforeend', data.html);
+    divCards.insertAdjacentHTML("beforeend", data.html);
 
     // window.location.assign('/magicard');
 
@@ -31,31 +48,29 @@ if (form) {
   });
 }
 
-
 if (divCards) {
-  divCards.addEventListener('click', async (event) => {
-    if (event.target.classList.contains('icon')) {
+  divCards.addEventListener("click", async (event) => {
+    if (event.target.classList.contains("icon")) {
       event.preventDefault();
       const res = await fetch(`/magicard/${event.target.dataset.id}`, {
-        method: 'DELETE',
+        method: "DELETE",
       });
       const data = await res.json();
       if (data.cardNum) {
-        event.target.closest('.all').remove();
+        event.target.closest(".all").remove();
       }
     }
   });
 }
 
-
 if (CreateCard) {
-  form.addEventListener('submit', async (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const { name, img, price, quality, action, method } = event.target;
     const res1 = await fetch(action, {
       method,
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name: name.value,
@@ -65,7 +80,7 @@ if (CreateCard) {
       }),
     });
     const data = await res1.json();
-    divCards.insertAdjacentHTML('beforeend', data.html);
-    window.location.assign('/magicard');
+    divCards.insertAdjacentHTML("beforeend", data.html);
+    window.location.assign("/magicard");
   });
 }

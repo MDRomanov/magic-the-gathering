@@ -74,8 +74,8 @@ body {
 
   width: 550px;
   background-color: rgb(140, 117, 90);
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+  border-radius: 30px;
+  /* border-bottom-left-radius: 30px; */
 }
 
 .btn-detail {
@@ -99,8 +99,8 @@ body {
 }
 .card-title-img-detail {
   width: 550px;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
+  border-radius: 30px;
+  /* border-top-left-radius: 30px; */
 }
 .div-header {
   margin: 30%;
