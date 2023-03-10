@@ -93,12 +93,12 @@ router.put('/edit/:cardId', async (req, res) => {
   const { name, img, price, quality } = req.body;
   if (name && img && price && quality) {
     const cardEdit = await Card.findOne({
-      where: { cardId, userId: req.session.userId },
+      where: { id: cardId, userId: req.session.userId },
     });
     cardEdit.name = name;
     cardEdit.img = img;
-    cardEdit.price = price;
-    cardEdit.quality = quality;
+    cardEdit.price = +price;
+    cardEdit.newOrOld = +quality;
     cardEdit.save();
     res.json({ message: 'ok' });
     // return res.redirect(`/magicard/${cardEdit.id}`);

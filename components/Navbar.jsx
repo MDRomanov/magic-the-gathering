@@ -2,7 +2,7 @@ const React = require('react');
 
 function Navbar({ user }) {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark ">
+    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div className="container-fluid">
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
