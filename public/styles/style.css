@@ -32,15 +32,12 @@ h1.title {
   margin-bottom: 5%;
   margin-top: 5%;
   color: white;
-}
 
-i {
-  margin: 25px;
 }
 
 body {
-  background-image: url("https://wallpaperaccess.com/full/6079733.png");
-  background-repeat: no-repeat;
+  background-image: url('https://wallpaperaccess.com/full/6079733.png');
+
 }
 
 .mb-3,
@@ -55,27 +52,7 @@ body {
 
 .all {
   margin-bottom: 5%;
-}
-.detail {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
-.card-detail {
-  width: 550px;
-  align-items: center;
-}
-.card-body-detail {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
-  width: 550px;
-  background-color: rgb(140, 117, 90);
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
 }
 
 .btn-detail {
@@ -103,6 +80,12 @@ body {
   border-top-left-radius: 30px;
 }
 .div-header {
-  margin: 30%;
+
   margin-bottom: 5%;
 }
+
+.nav-item {
+  color: azure;
+  padding: 0 60px 0 20px;
+}
+
