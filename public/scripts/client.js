@@ -72,11 +72,16 @@ if (divCards) {
   //  const {
   //    name, img, price, quality,
   //  } = e.target;
-   // const result = await fetch(`/magicard/edit/${e.target.dataset.id}`, {
+  // const result = await fetch(`/magicard/edit/${e.target.dataset.id}`, {
     //  method: 'PUT',
-     // headers: {
-        //'Content-Type': 'application/json',
-
+    // headers: {
+      //'Content-Type': 'application/json',
+      
+      //     const data = await res1.json();
+      //     divCards.insertAdjacentHTML("beforeend", data.html);
+      //     window.location.assign("/magicard");
+      //   });
+      // }
 
 if (CreateCard) {
   form.addEventListener("submit", async (event) => {
@@ -105,9 +110,4 @@ if (CreateCard) {
 }
 
 
-    const data = await res1.json();
-    divCards.insertAdjacentHTML("beforeend", data.html);
-    window.location.assign("/magicard");
-  });
-}
 
