@@ -1,12 +1,13 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function AddCard({ title, user }) {
+module.exports = function EditCard({ card }) {
   return (
-    <Layout title={title} user={user}>
-      <div className="cardForm">
-        <form action="/new" method="POST" id="formAdd">
-          <h2 className="form-title">Добавьте свою карточку</h2>
+    <Layout>
+      <h1>Изменить карточку</h1>
+
+      <main className="cardForm" role="main">
+        <form method="PUT" action={`/magicard/edit/${card.id}`} id="updateCard">
           <div className="mb-3">
             <label for="name" className="form-label">Название</label>
             <input type="text" className="form-control" id="name" aria-describedby="emailHelp" name="name" />
@@ -23,9 +24,9 @@ module.exports = function AddCard({ title, user }) {
             <label for="quality" className="form-label">Состояние</label>
             <input type="text" className="form-control" id="quality" name="quality" />
           </div>
-            <button type="submit" className="btn btn-primary">Добавить карту</button>
+          <button type="submit" className="btn btn-primary">Изменить карту</button>
         </form>
-      </div>
+      </main>
     </Layout>
   );
 };
