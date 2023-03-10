@@ -41,23 +41,39 @@ router.get("/:cardId", async (req, res) => {
   }
 });
 
-// router.post('/:cardId', async (req, res) => {
-//   const { name, img } = req.body;
-
-//   try {
-//     const card = await Card.findOne({ where: { id: req.params.cardId } });
-
-//     const cardBasketlist = await Basketlist.create({ name, img, userId: req.session.userId });
-
-//     const cardBasket = await Basket.create({ name, img, userId: req.session.userId });
-
-//     res.app.locals.studentName = student.name;
-
-//     res.json({ html: res.renderComponent(StudentCard, { student }, { htmlOnly: true }) });
-//   } catch (error) {
-//     res.send(console.log(error.message));
-//   }
-// });
+router.post("/:cardId", async (req, res) => {
+  // console.log(req.params.cardId);
+  try {
+    const card = await Card.findOne({
+      where: { id: req.params.cardId },
+      raw: true,
+    });
+    const cardBasket = await Basket.findOne({
+      where: { userId: req.session.userId, status: true },
+      raw: true,
+    });
+    // console.log(cardBasket);
+    if (cardBasket) {
+      const cardBasketlist = await Basketlist.create({
+        cardId: req.params.cardId,
+        count: 1,
+        basketId: cardBasket.id,
+      });
+    } else {
+      const newCardBasket = await Basket.create({
+        userId: req.session.userId,
+        status: true,
+      });
+      const newcardBasketlist = await Basketlist.create({
+        cardId: req.params.cardId,
+        count: 1,
+        basketId: newCardBasket.id,
+      });
+    }
+  } catch (error) {
+    res.send(console.log(error.message));
+  }
+});
 router.get("/edit/:cardId", async (req, res) => {
   try {
     const card = await Card.findOne({ where: { id: req.params.cardId } });

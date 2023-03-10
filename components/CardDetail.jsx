@@ -4,7 +4,7 @@ const Layout = require("./Layout");
 module.exports = function CardDetail({ card, userId }) {
   return (
     <Layout>
-      <div className="detail">
+      <div className="detail" id="detailCard">
         <div className="card-detail">
           <img className="card-title-img-detail" src={card.img} alt="..." />
           <div className="card-body-detail">
@@ -17,7 +17,13 @@ module.exports = function CardDetail({ card, userId }) {
             Город продавца: {user.city}
           </p> */}
             {/* проверка для логинизации */}
-            <button className="btn-detail">Добавить в корзину</button>
+            <button
+              className="btn-detail add"
+              id="addInBasket"
+              data-id={card.id}
+            >
+              Добавить в корзину
+            </button>
             <a href={`/magicard/${card.id}`} className="btn-detail">
               Редактировать карточку
             </a>
