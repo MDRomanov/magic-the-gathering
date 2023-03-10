@@ -1,7 +1,7 @@
-const React = require("react");
+const React = require('react');
 
-const BasketCard = require("./BasketCard");
-const Layout = require("./Layout");
+const BasketCard = require('./BasketCard');
+const Layout = require('./Layout');
 
 module.exports = function Basket({ cards, user }) {
   return (

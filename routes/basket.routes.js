@@ -1,13 +1,13 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
-const { Basket, Basketlist, Card } = require("../db/models");
-const CardList = require("../components/CardList");
-const AddCard = require("../components/AddCard");
-const BasketComponent = require("../components/Basket");
+const { Basket, Basketlist, Card } = require('../db/models');
+const CardList = require('../components/CardList');
+const AddCard = require('../components/AddCard');
+const BasketComponent = require('../components/Basket');
 // const CardInfo = require('../components/CardInfo');
 // const mainRouter = require('./main.routes');
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const cards = await Basket.findAll({
       where: { userId: req.session.userId, status: true },
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
       raw: true,
     });
     console.log(cards);
-    res.renderComponent(BasketComponent, { title: "Basket", cards });
+    res.renderComponent(BasketComponent, { title: 'Basket', cards });
   } catch (error) {
     res.send(console.log(error.message));
   }

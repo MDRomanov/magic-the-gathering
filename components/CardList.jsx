@@ -1,7 +1,7 @@
-const React = require("react");
+const React = require('react');
 
-const CardInfo = require("./CardInfo");
-const Layout = require("./Layout");
+const CardInfo = require('./CardInfo');
+const Layout = require('./Layout');
 
 module.exports = function CardList({ cards, user, userId }) {
   return (

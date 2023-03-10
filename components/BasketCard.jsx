@@ -12,18 +12,10 @@ module.exports = function BasketCard({ card, user, userId }) {
         <div className="card-body bg-red">
           <h5 className="card-title">{card['Basketlists.Card.name']}</h5>
           <p className="card-text">
-
-            Цена:
-            {' '}
-            {card['Basketlists.Card.price']}
-            {' '}
-            руб
+            Цена: {card['Basketlists.Card.price']} руб
           </p>
           <p className="card-text">
-
-            Внешнее состояние от 1 до 10:
-            {' '}
-            {card['Basketlists.Card.newOrOld']}
+            Внешнее состояние от 1 до 10: {card['Basketlists.Card.newOrOld']}
           </p>
           {/* <p className="card-text">
             Город продавца: {user.city}

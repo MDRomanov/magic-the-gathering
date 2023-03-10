@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 router.delete('/:cardId', async (req, res) => {
   try {
     const cardDel = await Card.findOne({ where: { id: req.params.cardId } });
