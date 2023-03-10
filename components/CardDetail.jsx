@@ -6,7 +6,7 @@ module.exports = function CardDetail({ card, userId, user }) {
     <Layout user={user}>
       <div className="detail" id="detailCard">
         <div className="card-detail">
-          <img className="card-title-img-detail" src={card.img} alt="..." />
+          <img className="img-detail" src={card.img} alt="..." />
           <div className="card-body-detail">
             <h5 className="card-title">{card.name}</h5>
             <p className="card-text">Цена: {card.price} руб</p>
