@@ -38,7 +38,7 @@ function Navbar({ user }) {
                 </li>
                 <li className="nav-item">
                   <h2 className="name" style={{ color: "#DAA520" }}>
-                    {user}
+                    Приветствуем, {user}!
                   </h2>
                   {/* позже написать {user.name} */}
                 </li>

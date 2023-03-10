@@ -19,6 +19,7 @@ module.exports = function Layout({ title, children, user }) {
           crossOrigin="anonymous"
         />
         <script defer src="/scripts/autorisationScript.js" />
+        <script defer src="/scripts/client.js" />
         {/* place for scripts from public/scripts */}
       </head>
       <body>

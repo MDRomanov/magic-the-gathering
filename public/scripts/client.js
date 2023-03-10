@@ -22,12 +22,32 @@ if (form) {
     const data = await res.json();
     // if (data.message === 'Ваша карточка добавлена') {
     divCards.insertAdjacentHTML('beforeend', data.html);
-    window.location.assign('/magicard');
+
+    // window.location.assign('/magicard');
+
     // } else {
     //   document.querySelector('.error').innerHTML = data.message;
     // }
   });
 }
+
+
+if (divCards) {
+  divCards.addEventListener('click', async (event) => {
+    if (event.target.classList.contains('icon')) {
+      event.preventDefault();
+      const res = await fetch(`/magicard/${event.target.dataset.id}`, {
+        method: 'DELETE',
+      });
+      const data = await res.json();
+      if (data.cardNum) {
+        event.target.closest('.all').remove();
+      }
+    }
+  });
+}
+
+
 if (CreateCard) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
