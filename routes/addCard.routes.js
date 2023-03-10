@@ -13,7 +13,6 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-
     const { name, img, price, quality } = req.body;
     if (name && img && price && quality) {
       const newCard = await Card.create({

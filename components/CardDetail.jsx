@@ -1,9 +1,9 @@
 const React = require("react");
 const Layout = require("./Layout");
 
-module.exports = function CardDetail({ card, userId }) {
+module.exports = function CardDetail({ card, userId, user }) {
   return (
-    <Layout>
+    <Layout user={user}>
       <div className="detail" id="detailCard">
         <div className="card-detail">
           <img className="card-title-img-detail" src={card.img} alt="..." />
@@ -27,7 +27,7 @@ module.exports = function CardDetail({ card, userId }) {
             <a href={`/magicard/${card.id}`} className="btn-detail">
               Редактировать карточку
             </a>
-            <a href={`/magicard/${card.id}`} className="btn-detail">
+            <a href={`/magicard/${card.id}`} className="btn-detail icon">
               Удалить карточку
             </a>
             {userId === card.userId && (
