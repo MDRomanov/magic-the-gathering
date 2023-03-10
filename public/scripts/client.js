@@ -20,17 +20,14 @@ if (form) {
       }),
     });
     const data = await res.json();
-    // if (data.message === 'Ваша карточка добавлена') {
-    divCards.insertAdjacentHTML('beforeend', data.html);
-
-    // window.location.assign('/magicard');
-
-    // } else {
-    //   document.querySelector('.error').innerHTML = data.message;
-    // }
+    if (data.message !== 'Ваша карточка добавлена') {
+      console.log(data.message);
+      form.insertAdjacentHTML('beforeend', data.message);
+    } else {
+      window.location.assign('/magicard');
+    }
   });
 }
-
 
 if (divCards) {
   divCards.addEventListener('click', async (event) => {
@@ -47,25 +44,24 @@ if (divCards) {
   });
 }
 
-
-if (CreateCard) {
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const { name, img, price, quality, action, method } = event.target;
-    const res1 = await fetch(action, {
-      method,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: name.value,
-        img: img.value,
-        price: price.value,
-        quality: quality.value,
-      }),
-    });
-    const data = await res1.json();
-    divCards.insertAdjacentHTML('beforeend', data.html);
-    window.location.assign('/magicard');
-  });
-}
+// if (CreateCard) {
+//   form.addEventListener('submit', async (event) => {
+//     event.preventDefault();
+//     const { name, img, price, quality, action, method } = event.target;
+//     const res1 = await fetch(action, {
+//       method,
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({
+//         name: name.value,
+//         img: img.value,
+//         price: price.value,
+//         quality: quality.value,
+//       }),
+//     });
+//     const data = await res1.json();
+//     divCards.insertAdjacentHTML('beforeend', data.html);
+//     window.location.assign('/magicard');
+//   });
+// }

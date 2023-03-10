@@ -22,16 +22,16 @@ router.post('/', async (req, res) => {
       newOrOld: quality,
       userId: req.session.userId,
     });
-    // if (newCard) {
-    //   res.json({ message: 'Ваша карточка добавлена' });
-    res.json({
-      html: res.renderComponent(CardInfo, { newCard }, { htmlOnly: true }),
-    });
-    res.redirect('/magicard');
-    res.end();
-    // } else {
-    // res.json({ message: 'При регистрации вашей карточки произошла ошибка' });
-    // }
+    if (newCard) {
+      res.json({ message: 'Ваша карточка добавлена' });
+    // res.json({
+    //   html: res.renderComponent(CardInfo, { newCard }, { htmlOnly: true }),
+    // });
+    // res.redirect('/magicard');
+
+    } else {
+    res.json({ message: 'При регистрации вашей карточки произошла ошибка' });
+    }
   } catch (error) {
     res.json({ message: error.message });
   }
